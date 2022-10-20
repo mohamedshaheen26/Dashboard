@@ -1,0 +1,1268 @@
+:root {
+  --blue-color: #0075ff;
+  --blue-alt-color: #0d69d5;
+  --orange-color: #f59e0b;
+  --green-color: #22c55e;
+  --red-color: #f44336;
+  --gray-color: #888;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page {
+  min-height: 100vh;
+  background: #f1f5f9;
+}
+
+.content {
+  overflow: hidden;
+}
+
+.wrapper {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  margin: 0 20px 20px;
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    grid-template-columns: minmax(200px, 1fr);
+    margin: 0 10px;
+    gap: 10px;
+  }
+}
+/********************************* Start Special Style ***************************/
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: var(--blue-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue-alt-color);
+}
+
+.Special-heading {
+  margin: 20px 20px 40px;
+}
+
+.Special-heading::before,
+.Special-heading::after {
+  content: "";
+  height: 3px;
+  position: absolute;
+  bottom: -10px;
+}
+
+.Special-heading::before {
+  width: 120px;
+  background: white;
+}
+
+.Special-heading::after {
+  width: 40px;
+  background: black;
+  left: 0;
+}
+
+.toggle-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.toggle-switch {
+  width: 78px;
+  height: 32px;
+  border-radius: 16px;
+  transition: background-color 200ms;
+  background: #ccc;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-switch::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  content: "\f00d";
+  background: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  transition: 0.5s;
+}
+
+.toggle-checkbox:checked + .toggle-switch {
+  background: var(--blue-color);
+}
+
+.toggle-checkbox:checked + .toggle-switch::before {
+  content: "\f00c";
+  left: 50px;
+  color: var(--blue-color);
+}
+/********************************* End Special Style ***************************/
+
+/********************************* Start SideBar *********************************/
+aside {
+  width: 250px;
+  box-shadow: 0 0 10px #ddd;
+}
+
+aside > h3 {
+  margin: 0 auto 50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@media (min-width: 767px) {
+  aside > h3::before,
+  aside > h3::after {
+    content: "";
+    position: absolute;
+    background: black;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  aside > h3::before {
+    width: calc(100% + 20px);
+    height: 2px;
+    bottom: -15px;
+  }
+
+  aside > h3::after {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    bottom: -24px;
+    border: 4px solid white;
+  }
+}
+
+aside ul li a {
+  transition: 0.3s;
+  margin-bottom: 5px;
+}
+
+aside ul li a:hover,
+aside ul li a.active {
+  background: #f6f6f6;
+}
+
+aside ul li a span {
+  margin-left: 10px;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .page aside {
+    width: 58px;
+    padding: 10px;
+  }
+  aside > h3 {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+}
+/********************************* End SideBar ************************************/
+
+/********************************* Start Header *********************************/
+header .search::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f002";
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15px;
+  font-size: 14px;
+  color: var(--gray-color);
+}
+
+header .search input {
+  margin-left: 5px;
+  padding-left: 30px;
+  width: 160px;
+  transition: width 0.3s;
+}
+
+header .search input:focus {
+  width: 200px;
+}
+
+header .search input:focus::-webkit-input-placeholder {
+  visibility: hidden;
+}
+
+header .search input:focus::-moz-placeholder {
+  visibility: hidden;
+}
+
+header .search input:focus:-ms-input-placeholder {
+  visibility: hidden;
+}
+
+header .search input:focus::-ms-input-placeholder {
+  visibility: hidden;
+}
+
+header .search input:focus::placeholder {
+  visibility: hidden;
+}
+
+@media (max-width: 375px) {
+  header .search input {
+    width: 20px;
+  }
+  header .search input:focus {
+    width: 150px;
+  }
+}
+
+header .icons .notification::before {
+  content: "";
+  position: absolute;
+  background: var(--red-color);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  right: -5px;
+  top: -5px;
+}
+
+header .icons img {
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+}
+/********************************* End Header *********************************/
+
+/*************** Start Wrapper Widgets => Dashboard ********************/
+
+/* Start First Widget => Welcome */
+.welcome {
+  overflow: hidden;
+}
+
+.welcome .intro img {
+  width: 200px;
+  margin-bottom: -10px;
+}
+
+.welcome .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 5px #ddd;
+  margin-left: 20px;
+  margin-top: -32px;
+}
+
+.welcome .body {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.welcome .body > div {
+  flex: 1;
+}
+
+.welcome .visit {
+  margin: 0 15px 15px auto;
+  transition: 0.3s;
+}
+
+.welcome .visit:hover {
+  background: var(--blue-alt-color);
+}
+
+@media (max-width: 767px) {
+  .welcome .intro {
+    padding-bottom: 30px;
+  }
+
+  .welcome .avatar {
+    margin-left: 0;
+  }
+
+  .welcome .body > div:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+/* End First Widget => Welcome */
+
+/* Start Second Widget => Quick Draft */
+.quick textarea {
+  resize: none;
+  min-height: 180px;
+}
+
+.quick .save {
+  margin: 0 0 0 auto;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.quick .save:hover {
+  background: var(--blue-alt-color);
+}
+/* End Second Widget => Quick Draft */
+
+/* Start Third Widget => Yearly Targets */
+.targets .target-row .icons {
+  width: 80px;
+  height: 80px;
+}
+
+.targets .progress-bar {
+  height: 4px;
+}
+
+.targets .progress-bar > span {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.targets .progress-bar > span span {
+  position: absolute;
+  padding: 2px 5px;
+  right: -16px;
+  bottom: 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: white;
+}
+
+.targets .progress-bar > span span::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+}
+
+.targets .progress-bar > .blue span::before {
+  border-color: var(--blue-color) transparent transparent;
+}
+
+.targets .progress-bar > .orange span::before {
+  border-color: var(--orange-color) transparent transparent;
+}
+
+.targets .progress-bar > .green span::before {
+  border-color: var(--green-color) transparent transparent;
+}
+
+.blue .icons,
+.blue .progress-bar {
+  background: rgb(0 117 255 / 20%);
+}
+
+.orange .icons,
+.orange .progress-bar {
+  background: rgb(245 158 11 / 20%);
+}
+
+.green .icons,
+.green .progress-bar {
+  background: rgb(34 197 94 / 20%);
+}
+/* End Third Widget => Yearly Targets */
+
+/* Start Fourth Widget => Tickets Statistics */
+.tickets .box {
+  width: calc(50% - 10px);
+  border: 1px solid #ccc;
+}
+
+@media (max-width: 767px) {
+  .tickets .box {
+    width: 100%;
+  }
+}
+/* End Fourth Widget => Tickets Statistics */
+
+/* Start Fifth Widget => Latest News */
+.news .image {
+  width: 100px;
+}
+
+@media (max-width: 767px) {
+  .news .info {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
+}
+/* End Fifth Widget => Latest News */
+/* Start sixth Widget => Latest Tasks */
+.tasks .done {
+  opacity: 0.3;
+}
+.tasks .done h3,
+.tasks .done p {
+  text-decoration: line-through;
+}
+
+.tasks .delete {
+  cursor: pointer;
+}
+
+.tasks .delete:hover {
+  color: var(--red-color);
+}
+/* End sixth Widget => Latest Tasks */
+/* Start eighth Widget => Latest Uploads */
+.uploads img {
+  width: 40px;
+  height: 40px;
+}
+/* End eighth Widget => Latest Uploads */
+/* Start Ninth Widget => Last Project Progress */
+.last-project ul::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: 11px;
+  background: var(--blue-color);
+}
+
+.last-project ul li::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  display: block;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid white;
+  outline: 2px solid blue;
+  z-index: 1;
+}
+
+.last-project ul .done::before {
+  background: var(--blue-color);
+}
+
+.last-project ul .current::before {
+  -webkit-animation: change-color 0.8s alternate infinite;
+  animation: change-color 0.8s alternate infinite;
+}
+
+@-webkit-keyframes change-color {
+  from {
+    background: var(--blue-color);
+  }
+  to {
+    background: white;
+  }
+}
+
+@keyframes change-color {
+  from {
+    background: var(--blue-color);
+  }
+  to {
+    background: white;
+  }
+}
+
+.last-project img {
+  position: absolute;
+  width: 150px;
+  right: 0;
+  bottom: 0;
+  opacity: 0.4;
+}
+/* End Ninth Widget => Last Project Progress */
+/* Start Tenth Widget => Reminders */
+.reminders .reminder-row span {
+  width: 15px;
+  height: 15px;
+  display: block;
+  border-radius: 50%;
+}
+
+.reminders .reminder-row .content {
+  padding-left: 15px;
+}
+
+.reminders .reminder-row .blue {
+  border-left: 3px solid var(--blue-color);
+}
+
+.reminders .reminder-row .green {
+  border-left: 3px solid var(--green-color);
+}
+
+.reminders .reminder-row .orange {
+  border-left: 3px solid var(--orange-color);
+}
+
+.reminders .reminder-row .red {
+  border-left: 3px solid var(--red-color);
+}
+/* End Tenth Widget => Reminders */
+/* Start Eleventh Widget => Latest Post */
+.posts img {
+  width: 48px;
+  height: 48px;
+}
+
+.posts .post-content {
+  line-height: 1.8;
+  min-height: 180px;
+  text-transform: capitalize;
+}
+
+/* Start Twelfth Widget => Social Media Stats */
+.social-media .box {
+  padding-left: 70px;
+}
+
+.social-media .box i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 52px;
+  transition: 0.3s;
+}
+
+.social-media .box i:hover {
+  transform: scale(1.1);
+}
+
+.social-media .twitter {
+  background: rgba(29 161 242 / 20%);
+  color: #1da1f2;
+}
+
+.social-media .facebook {
+  background: rgba(24 119 242 / 20%);
+  color: #1da1f2;
+}
+
+.social-media .youtube {
+  background: rgba(255 0 0 / 20%);
+  color: #ff0000;
+}
+
+.social-media .linkedin {
+  background: rgba(0 119 181 / 20%);
+  color: #0077b5;
+}
+
+.social-media .twitter i,
+.social-media .twitter a {
+  background: #1da1f2;
+}
+
+.social-media .facebook i,
+.social-media .facebook a {
+  background: #1da1f2;
+}
+
+.social-media .youtube i,
+.social-media .youtube a {
+  background: #ff0000;
+}
+
+.social-media .linkedin i,
+.social-media .linkedin a {
+  background: #0077b5;
+}
+/* End Twelfth Widget => Social Media Stats */
+/* End Eleventh Widget => Latest Post */
+/* Start Projects Table */
+.projects .responsive-table {
+  overflow-x: auto;
+}
+
+.projects table {
+  min-width: 1000px;
+  border-spacing: 0;
+}
+
+.projects thead td {
+  background: #eee;
+  font-weight: bold;
+}
+
+.projects td {
+  padding: 15px;
+}
+
+.projects tbody td {
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.projects table thead tr td:last-child {
+  border-right: 1 px solid #eee;
+}
+
+.projects tbody tr:hover td {
+  background: #faf7f7;
+}
+
+.projects table img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 2px;
+  background: white;
+}
+
+.projects table img:not(:first-child) {
+  margin-left: -20px;
+}
+/* End Projects Table */
+/*************** End Wrapper Widgets => Dashboard ********************/
+/*************** Start Wrapper Widgets => Settings ********************/
+.settings-page {
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  margin: 0 20px 20px;
+}
+
+@media (max-width: 767px) {
+  .settings-page {
+    grid-template-columns: minmax(100px, 1fr);
+    margin: 0 10px;
+  }
+}
+/* Start First Widget =>  Site Control */
+.site-control textarea {
+  resize: none;
+  min-height: 150px;
+}
+/* End First Widget =>  Site Control */
+/* Start Second Widget =>  General Info */
+.general-info :disabled {
+  background: #f0f4f8;
+  cursor: no-drop;
+}
+/* End Second Widget =>  General Info */
+/* Start Third Widget =>  Security Info */
+.Security-info a {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.Security-info .change:hover {
+  background: var(--blue-alt-color);
+}
+
+.Security-info .device:hover {
+  background: #ddd;
+}
+/* End Third Widget =>  Security Info */
+/* Start Fourth Widget =>  Social Info */
+.social-info i {
+  width: 40px;
+  height: 40px;
+  background: #f6f6f6;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  transition: 0.3s;
+}
+
+.social-info input {
+  height: 40px;
+  background: #f6f6f6;
+  border: 1px solid #ddd;
+  padding-left: 10px;
+  border-radius: 0 6px 6px 0;
+}
+
+.social-info > div:focus-within i {
+  color: black;
+}
+/* End Fourth Widget =>  Social Info */
+/* Start Fifth Widget =>  Widgets Control */
+.widgets-control input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.widgets-control label {
+  padding-left: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.widgets-control label::before,
+.widgets-control label::after {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -9px;
+  border-radius: 4px;
+}
+
+.widgets-control label::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--gray-color);
+}
+
+.widgets-control label:hover::before {
+  border-color: var(--blue-alt-color);
+}
+
+.widgets-control label::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  content: "\f00c";
+  background: var(--blue-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  transition: 0.3s;
+  transform: scale(0) rotate(1turn);
+}
+
+.widgets-control input:checked + label::after {
+  transform: scale(1);
+}
+/* End Fifth Widget =>  Widgets Control */
+/* Start Sixth Widget =>  Backup Manager */
+.backup input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.backup .date label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.backup .date label::before,
+.backup .date label::after {
+  content: "";
+  position: absolute;
+}
+
+.backup .date label::before {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--gray-color);
+  border-radius: 50%;
+  left: 0;
+  top: 50%;
+  margin-top: -11px;
+}
+
+.backup .date label::after {
+  width: 12px;
+  height: 12px;
+  background: var(--blue-color);
+  border-radius: 50%;
+  left: 5px;
+  top: 5px;
+  transform: scale(0);
+  transition: 0.3s;
+}
+
+.backup .date input:checked + label::before {
+  border-color: var(--blue-color);
+}
+
+.backup .date input:checked + label::after {
+  transform: scale(1);
+}
+
+.backup .servers {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+@media (max-width: 767px) {
+  .backup .servers {
+    flex-wrap: wrap;
+  }
+}
+
+.backup .servers .server {
+  border: 2px solid #eee;
+  position: relative;
+  padding: 20px;
+}
+
+.backup .servers .server label {
+  cursor: pointer;
+}
+
+.backup .servers input:checked + .server {
+  border-color: var(--blue-color);
+  color: var(--blue-color);
+}
+/* End Sixth Widget =>  Backup Manager */
+/*************** End Wrapper Widgets => Settings ********************/
+/*************** Start Wrapper Widgets => Profile ********************/
+.profile .overview .avatar-box {
+  width: 300px;
+}
+
+@media (min-width: 768px) {
+  .profile .overview .avatar-box {
+    border-right: 1px solid #eee;
+  }
+}
+
+.profile .overview .avatar-box img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.profile .overview .avatar-box .level {
+  height: 6px;
+  width: 70%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.profile .overview .avatar-box .level span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--blue-color);
+  border-radius: 6px;
+}
+
+@media (min-width: 768px) {
+  .profile .overview .info .info-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.profile .overview .info .info-row {
+  transition: 0.3s;
+}
+
+.profile .overview .info .info-row:hover {
+  background: #f9f9f9;
+}
+
+.profile .overview .info .info-row > div {
+  padding: 10px 0 0;
+}
+
+@media (min-width: 375px) {
+  .profile .overview .info .info-row > div {
+    min-width: 250px;
+  }
+}
+
+.profile .overview .info .info-row h4 {
+  font-weight: normal;
+}
+
+.profile .overview .info .toggle-switch {
+  height: 20px;
+}
+
+@media (max-width: 767px) {
+  .profile .overview .info .toggle-switch {
+    margin: auto;
+  }
+}
+
+.profile .overview .info .toggle-switch::before {
+  height: 12px;
+  width: 12px;
+  font-size: 8px;
+}
+
+.profile .overview .info .toggle-checkbox:checked + .toggle-switch::before {
+  left: 62px;
+}
+
+@media (max-width: 767px) {
+  .profile .other-data {
+    flex-direction: column;
+  }
+}
+
+.profile .other-data .skills {
+  flex-grow: 1;
+}
+
+.profile .other-data .activities {
+  flex-grow: 2;
+}
+
+.profile .other-data .activities img {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+@media (min-width: 425px) {
+  .profile .other-data .activities .date {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 424px) {
+  .profile .other-data .activity-row {
+    flex-direction: column;
+  }
+  .profile .other-data .activities img {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .profile .other-data .activities .date {
+    margin-top: 15px;
+  }
+  .profile .other-data .activities .date span {
+    text-align: center;
+  }
+}
+/*************** End Wrapper Widgets => Profile ********************/
+/*************** Start Wrapper Widgets => Projects ********************/
+.projects .box .heading {
+  align-items: flex-start;
+}
+
+.projects .members {
+  position: relative;
+  min-height: 100px;
+}
+
+.projects .members img {
+  position: absolute;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+.projects .members img:hover {
+  z-index: 2000;
+  transform: translateY(-5px);
+}
+
+.projects .members img:nth-child(2) {
+  left: 25px;
+}
+.projects .members img:nth-child(3) {
+  left: 50px;
+}
+.projects .members img:nth-child(4) {
+  left: 75px;
+}
+.projects .members img:nth-child(5) {
+  left: 100px;
+}
+
+@media (max-width: 767px) {
+  .projects .do {
+    flex-direction: column;
+  }
+  .projects .do span {
+    width: fit-content;
+    margin-bottom: 5px;
+  }
+}
+
+.projects .progress {
+  width: 250px;
+  height: 8px;
+}
+.projects .progress span {
+  display: block;
+  height: 100%;
+}
+
+@media (max-width: 425px) {
+  .projects .prog {
+    flex-direction: column;
+  }
+  .projects .progress {
+    width: 200px;
+    margin-top: 15px;
+  }
+}
+/*************** End Wrapper Widgets => Projects ********************/
+/*************** Start Wrapper Widgets => Courses ********************/
+.courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin: 0 20px 20px;
+}
+
+@media (max-width: 767px) {
+  .courses {
+    grid-template-columns: minmax(200px, 1fr);
+    gap: 10px;
+    margin: 0 10px;
+  }
+}
+
+.courses .box {
+  overflow: hidden;
+}
+
+.courses .team {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.courses .content p {
+  line-height: 1.6;
+}
+
+.courses .info {
+  border-top: 1px solid #eee;
+}
+
+.courses .info button {
+  position: absolute;
+  bottom: 36px;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 100;
+}
+/*************** End Wrapper Widgets => Courses ********************/
+/*************** Start Wrapper Widgets => Friends ********************/
+.friends {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin: 0 20px 20px;
+}
+
+@media (max-width: 767px) {
+  .friends {
+    grid-template-columns: minmax(200px, 1fr);
+    gap: 10px;
+    margin: 0 10px;
+  }
+}
+
+.friends .box .icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.friends .box .icon i {
+  background: #eee;
+  padding: 10px;
+  border-radius: 50%;
+  color: #666;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.friends .box .icon i:hover {
+  background: var(--blue-color);
+  color: white;
+}
+
+.friends .title img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 15px;
+}
+
+.friends .vip {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  font-weight: bold;
+  opacity: 0.2;
+}
+/*************** End Wrapper Widgets => Friends ********************/
+/*************** Start Wrapper Widgets => Files ********************/
+@media (max-width: 767px) {
+  .files {
+    flex-direction: column-reverse;
+    align-items: normal;
+  }
+}
+
+.files .files-content {
+  flex: 1;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.files .box i:hover {
+  cursor: pointer;
+  color: var(--blue-alt-color);
+}
+
+.files img {
+  width: 64px;
+  height: 64px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.files img:hover {
+  transform: rotate(5deg);
+}
+
+.files .files-stats {
+  min-width: 260px;
+}
+
+.files .files-stats .blue {
+  background-color: rgb(0 117 255 / 20%);
+}
+
+.files .files-stats .green {
+  background-color: rgb(34 197 94 / 20%);
+}
+
+.files .files-stats .red {
+  background-color: rgb(244 67 54 / 20%);
+}
+
+.files .files-stats .orange {
+  background-color: rgb(245 158 11 / 20%);
+}
+
+.files .files-stats .icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.files .files-stats .size {
+  margin-left: auto;
+}
+
+.files .files-stats .upload {
+  margin: 15px auto 0;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+.files .files-stats .upload:hover {
+  background: var(--blue-alt-color);
+}
+@keyframes moveArrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.files .files-stats .upload:hover i {
+  animation: moveArrow 0.8s infinite;
+}
+/*************** End Wrapper Widgets => Files ********************/
+/*************** Start Wrapper Widgets => Plans ********************/
+.plans {
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+@media (max-width: 767px) {
+  .plans {
+    grid-template-columns: minmax(200px, 1fr);
+    gap: 10px;
+    margin: 10px;
+  }
+}
+
+.plans .box p {
+  font-size: 40px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.plans .box p i {
+  left: -17px;
+  top: 7px;
+}
+
+.plans .box ul li .help {
+  margin-left: auto;
+  color: var(--gray-color);
+}
+
+.plans .box ul li .green:hover {
+  color: var(--green-color);
+  cursor: pointer;
+}
+
+.plans .box ul li .blue:hover {
+  color: var(--blue-color);
+  cursor: pointer;
+}
+
+.plans .box ul li .orange:hover {
+  color: var(--orange-color);
+  cursor: pointer;
+}
+/*************** End Wrapper Widgets => Plans ********************/
