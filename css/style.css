@@ -54,6 +54,39 @@ button {
     gap: 10px;
   }
 }
+
+.sucess {
+  width: 80px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  background-color: rgb(61, 194, 61);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+}
+/********************************* Start Dark Mode ***************************/
+body {
+  transition: background-color 0.5s ease;
+}
+
+.light-mode {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+/********************************* Start Dark Mode ***************************/
+
 /********************************* Start Special Style ***************************/
 
 ::-webkit-scrollbar {
@@ -1266,3 +1299,27 @@ header .icons img {
   cursor: pointer;
 }
 /*************** End Wrapper Widgets => Plans ********************/
+
+/*************** Start   Wrapper Widgets => Darfts ********************/
+@media (max-width: 767px) {
+  .drafts {
+    flex-direction: column-reverse;
+    align-items: normal;
+  }
+}
+
+.drafts .draft-content {
+  flex: 1;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.delete {
+  position: absolute;
+  right: 10px;
+}
+
+.delete:hover {
+  cursor: pointer;
+  color: var(--red-color);
+}
+/*************** End Wrapper Widgets => Darfts ********************/

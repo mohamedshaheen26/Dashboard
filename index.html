@@ -20,10 +20,10 @@
     />
   </head>
   <body>
-    <div class="page d-flex">
+    <div class="page d-flex" id="page">
       <!-- Start SideBar -->
       <aside class="bg-white p-relative p-20">
-        <h3 class="p-relative txt-c mt-0">Shaheen</h3>
+        <h3 class="p-relative txt-c mt-0">Dashboad</h3>
         <ul>
           <li>
             <a
@@ -35,45 +35,75 @@
             </a>
           </li>
           <li>
-            <a class="d-flex align-c fs-14 c-black rad-6 p-10" href="settings.html">
+            <a
+              class="d-flex align-c fs-14 c-black rad-6 p-10"
+              href="settings.html"
+            >
               <i class="fa-solid fa-gear fa-fw"></i>
               <span class="hide-mobile">Settings</span>
             </a>
           </li>
           <li>
-            <a class="d-flex align-c fs-14 c-black rad-6 p-10" href="profile.html">
+            <a
+              class="d-flex align-c fs-14 c-black rad-6 p-10"
+              href="profile.html"
+            >
               <i class="fa-regular fa-user fa-fw"></i>
               <span class="hide-mobile">Profile</span>
             </a>
           </li>
           <li>
-            <a class="d-flex align-c fs-14 c-black rad-6 p-10" href="projects.html">
+            <a
+              class="d-flex align-c fs-14 c-black rad-6 p-10"
+              href="projects.html"
+            >
               <i class="fa-solid fa-diagram-project fa-fw"></i>
               <span class="hide-mobile">Projects</span>
             </a>
           </li>
           <li>
-            <a class="d-flex align-c fs-14 c-black rad-6 p-10" href="courses.html">
+            <a
+              class="d-flex align-c fs-14 c-black rad-6 p-10"
+              href="courses.html"
+            >
               <i class="fa-solid fa-graduation-cap fa-fw"></i>
               <span class="hide-mobile">Courses</span>
             </a>
           </li>
           <li>
-            <a class="d-flex align-c fs-14 c-black rad-6 p-10" href="friends.html">
+            <a
+              class="d-flex align-c fs-14 c-black rad-6 p-10"
+              href="friends.html"
+            >
               <i class="fa-regular fa-circle-user fa-fw"></i>
               <span class="hide-mobile">Friends</span>
             </a>
           </li>
           <li>
-            <a class="d-flex align-c fs-14 c-black rad-6 p-10" href="files.html">
+            <a
+              class="d-flex align-c fs-14 c-black rad-6 p-10"
+              href="files.html"
+            >
               <i class="fa-regular fa-file fa-fw"></i>
               <span class="hide-mobile">Files</span>
             </a>
           </li>
           <li>
-            <a class="d-flex align-c fs-14 c-black rad-6 p-10" href="plans.html">
+            <a
+              class="d-flex align-c fs-14 c-black rad-6 p-10"
+              href="plans.html"
+            >
               <i class="fa-regular fa-credit-card fa-fw"></i>
               <span class="hide-mobile">Plans</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="d-flex align-c fs-14 c-black rad-6 p-10"
+              href="drafts.html"
+            >
+              <i class="fa-brands fa-firstdraft fa-fw"></i>
+              <span class="hide-mobile">Darfts</span>
             </a>
           </li>
         </ul>
@@ -90,6 +120,7 @@
             />
           </div>
           <div class="icons d-flex align-c">
+            <button id="toggleBtn">Dark Mode</button>
             <span class="p-relative notification">
               <i class="fa-regular fa-bell fa-lg pointer"></i>
             </span>
@@ -133,10 +164,11 @@
           </div>
           <!-- End first Widget => Welcome -->
           <!-- Start Second Widget => Quick Draft -->
-          <div class="quick bg-white p-20 rad-10">
+          <div class="p-relative quick bg-white p-20 rad-10" id="quickDraft">
+            <div class="sucess">Saved</div>
             <h2 class="mt-0 mb-10">Quick Draft</h2>
             <p class="fs-15 c-gray mt-0 mb-20">Write A Draft For Your Ideas</p>
-            <form action="">
+            <form action="" id="save-draft">
               <input
                 class="d-block mb-20 w-full p-10 b-none bg-eee rad-6"
                 type="text"
@@ -672,6 +704,6 @@
         <!-- End Projects Table -->
       </div>
     </div>
-    <script src="Js/main.js"></script>
+    <script type="module" src="Js/main.js"></script>
   </body>
 </html>

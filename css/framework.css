@@ -195,6 +195,9 @@
 .txt-r {
   text-align: right;
 }
+.txt-l {
+  text-align: left;
+}
 .fs-13 {
   font-size: 13px;
 }
