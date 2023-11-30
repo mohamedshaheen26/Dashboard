@@ -45,6 +45,19 @@ saveDraft.addEventListener("submit", function (e) {
   saveDraft.children[1].value = "";
 });
 
-export function addArrayToLocal(array) {
+function addArrayToLocal(array) {
   window.localStorage.setItem("Drafts", JSON.stringify(array));
 }
+
+// Delete Latest Tasks
+function deleteTask(del) {
+  del.parentElement.remove();
+}
+
+let tasksRow = document.querySelectorAll(".title");
+
+tasksRow.forEach((task) => {
+  task.addEventListener("click", () => {
+    task.classList.toggle("done");
+  });
+});

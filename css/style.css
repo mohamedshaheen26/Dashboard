@@ -475,8 +475,21 @@ header .icons img {
 .tasks .done {
   opacity: 0.3;
 }
-.tasks .done h3,
-.tasks .done p {
+
+.task-row:hover {
+  cursor: pointer;
+}
+
+.delete:hover.disabled {
+  cursor: not-allowed;
+}
+
+.title .done h3,
+.title .done p {
+  text-decoration: line-through;
+}
+
+.done {
   text-decoration: line-through;
 }
 
