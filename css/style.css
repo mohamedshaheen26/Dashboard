@@ -1326,12 +1326,12 @@ header .icons img {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-.delete {
+.drafts .delete {
   position: absolute;
   right: 10px;
 }
 
-.delete:hover {
+.drafts .delete:hover {
   cursor: pointer;
   color: var(--red-color);
 }
