@@ -40,6 +40,7 @@ button {
 
 .content {
   overflow: hidden;
+  margin-left: 250px;
 }
 
 .wrapper {
@@ -178,6 +179,10 @@ body {
 aside {
   width: 250px;
   box-shadow: 0 0 10px #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
 
 aside > h3 {
