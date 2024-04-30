@@ -38,7 +38,7 @@ button {
   background: #f1f5f9;
 }
 
-.content {
+.content-body {
   overflow: hidden;
   margin-left: 250px;
 }
@@ -1302,17 +1302,17 @@ header .icons img {
   color: var(--gray-color);
 }
 
-.plans .box ul li .green:hover {
+.plans .box ul li:hover .green {
   color: var(--green-color);
   cursor: pointer;
 }
 
-.plans .box ul li .blue:hover {
+.plans .box ul li:hover .blue {
   color: var(--blue-color);
   cursor: pointer;
 }
 
-.plans .box ul li .orange:hover {
+.plans .box ul li:hover .orange {
   color: var(--orange-color);
   cursor: pointer;
 }
